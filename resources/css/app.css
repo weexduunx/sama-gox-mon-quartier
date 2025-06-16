@@ -15,15 +15,16 @@
 
     --color-zinc-50: #fafafa;
     --color-zinc-100: #f5f5f5;
-    --color-zinc-200: #e5e5e5;
+    --color-zinc-200: #fff9f9;
     --color-zinc-300: #d4d4d4;
-    --color-zinc-400: #a3a3a3;
-    --color-zinc-500: #737373;
-    --color-zinc-600: #525252;
+    --color-zinc-400: #fbffe8;
+    --color-zinc-500: #fff;
+    --color-zinc-600: #fff9f9;
     --color-zinc-700: #404040;
-    --color-zinc-800: #262626;
+    --color-zinc-800: #2e3802;
     --color-zinc-900: #171717;
     --color-zinc-950: #0a0a0a;
+    --color-whitesmoke:#ffffff;
     --color-green: '#00A651';
     --color-yellow: '#FDEF42';
     --color-red: '#E31E24';
@@ -84,7 +85,7 @@ body {
 }
 
 .gradient-bg {
-    background: linear-gradient(135deg, #00A651 0%, #00D4AA 100%);
+    background: linear-gradient(135deg, #00A651 0%, #FDEF42 50%, #E31E24 100%);
 }
 
 .card-hover {
