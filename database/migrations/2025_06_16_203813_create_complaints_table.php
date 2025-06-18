@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('complaints', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->nullable()->constrained()->onDelete('set null');
-            $table->string('type'); // Voirie, Nuisance sonore, etc.
+            $table->string('complainant')->nullable(); // Peut-être anonyme
+            $table->string('type');
             $table->text('description');
             $table->string('address');
+            $table->date('date'); // Date du signalement
+            $table->string('status')->default('Ouvert'); // Ouvert, En cours, Résolu, Fermé
             $table->string('priority')->default('Moyenne'); // Basse, Moyenne, Haute
-            $table->string('status')->default('Ouvert'); // Ouvert, En cours, Résolu
-            $table->date('date')->nullable();
+            $table->foreignId('resident_id')->nullable()->constrained()->onDelete('set null'); // Liaison optionnelle avec Resident
             $table->timestamps();
         });
         

@@ -2,23 +2,27 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
 class Complaint extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'resident_id',
+        'complainant',
         'type',
         'description',
         'address',
-        'priority',
-        'status',
         'date',
+        'status',
+        'priority',
+        'resident_id',
     ];
 
-    protected $dates = ['date'];
+    protected $casts = [
+        'date' => 'date',
+    ];
 
     public function resident()
     {

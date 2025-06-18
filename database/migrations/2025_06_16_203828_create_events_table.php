@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->date('date');
-            $table->time('time');
+            $table->string('time');
             $table->string('location');
-            $table->string('type'); // Réunion, Communautaire, etc.
+            $table->string('type')->nullable(); // Réunion, Communautaire, Autre
             $table->text('description')->nullable();
             $table->timestamps();
         });

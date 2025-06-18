@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('resident_id')->constrained()->onDelete('cascade');
-            $table->string('purpose'); // Emploi, Banque, etc.
+            $table->string('applicant');
+            $table->string('address');
+            $table->string('phone')->nullable();
+            $table->string('purpose');
             $table->string('status')->default('En attente'); // En attente, Approuvé, Rejeté
-            $table->date('request_date')->nullable();
+            $table->date('request_date'); // Date de la demande
+            $table->foreignId('resident_id')->nullable()->constrained()->onDelete('set null'); // Liaison optionnelle avec Resident
             $table->timestamps();
         });
         

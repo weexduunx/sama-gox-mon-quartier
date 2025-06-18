@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
 class Event extends Model
 {
     use HasFactory;
@@ -17,5 +18,7 @@ class Event extends Model
         'description',
     ];
 
-    protected $dates = ['date'];
+    protected $casts = [
+        'date' => 'date',
+    ];
 }
